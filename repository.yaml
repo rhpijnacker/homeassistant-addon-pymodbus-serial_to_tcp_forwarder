@@ -1,0 +1,3 @@
+name: Forwards serial modbus i/o to a TCP modbus client
+url: 'https://github.com/rhpijnacker/homeassistant-addon-pymodbus-serial_to_tcp_forwarder'
+maintainer: rhpijnacker
