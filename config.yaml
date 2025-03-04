@@ -1,6 +1,6 @@
 name: "Home Assistant Add-On - pyModbus - Serial to TCP forwarder"
 description: "Forwards serial modbus i/o to a TCP modbus client"
-version: "0.0.1"
+version: "0.0.2"
 slug: "pymodbus"
 init: false
 arch:
