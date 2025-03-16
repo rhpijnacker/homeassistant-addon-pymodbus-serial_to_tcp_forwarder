@@ -11,7 +11,7 @@ import signal
 from pymodbus.client import ModbusSerialClient
 from pymodbus.datastore import ModbusServerContext
 from pymodbus.datastore.remote import RemoteSlaveContext
-from pymodbus.server import ModbusTcpServer
+from pymodbus.server.async_io import ModbusTcpServer
 
 
 _logger = logging.getLogger(__file__)
@@ -33,7 +33,7 @@ class SerialForwarderTCPServer:
     async def run(self):
         """Run the server"""
         port, baudrate, server_port, server_ip, slaves = get_commandline()
-        client = ModbusSerialClient(port=port, baudrate=baudrate, bytesize=8, parity='E', stopbits=1)
+        client = ModbusSerialClient(method="rtu", port=port, baudrate=baudrate, bytesize=8, parity='E', stopbits=1)
         message = f"RTU bus on {port} - baudrate {baudrate}"
         _logger.info(message)
         store = {}
